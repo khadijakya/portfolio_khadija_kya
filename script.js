@@ -1,6 +1,4 @@
-
-   
-        // Professional Portfolio JavaScript - Sarah Kim
+// Professional Portfolio JavaScript - Sarah Kim
         // First-Year Information Engineering Student Portfolio
         // All functionalities implemented with modern JavaScript ES6+
 
@@ -386,83 +384,47 @@
                 `;
             }
 
-            // Contact form with validation
-            initContactForm() {
-                const form = document.getElementById('contact-form');
-                
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    
-                    const formData = new FormData(form);
-                    const data = Object.fromEntries(formData);
-                    
-                    if (this.validateForm(data)) {
-                        await this.handleFormSubmit(data);
-                    }
-                });
-            }
+initContactForm() {
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        await this.handleFormSubmit(data);
+    });
+} // هاد القوس كان ناقص عندك وهو اللي داير مشكل لتحت
 
-            validateForm(data) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                
-                if (!data.name.trim()) {
-                    this.showFormError('name', 'Name is required');
-                    return false;
-                }
-                
-                if (!emailRegex.test(data.email)) {
-                    this.showFormError('email', 'Please enter a valid email');
-                    return false;
-                }
-                
-                if (!data.message.trim()) {
-                    this.showFormError('message', 'Message is required');
-                    return false;
-                }
-                
-                return true;
+async handleFormSubmit(data) {
+    const form = document.getElementById('contact-form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }
+        });
 
-            showFormError(fieldId, message) {
-                const field = document.getElementById(fieldId);
-                field.style.borderColor = '#ef4444';
-                field.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
-                
-                // Remove error after 3 seconds
-                setTimeout(() => {
-                    field.style.borderColor = 'var(--border)';
-                    field.style.boxShadow = 'none';
-                }, 3000);
-            }
-
-            async handleFormSubmit(data) {
-                const form = document.getElementById('contact-form');
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                
-                // Show loading state
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
-                
-                try {
-                    // Simulate API call
-                    await new Promise(resolve => setTimeout(resolve, 2000));
-                    
-                    // Here you would typically send to your backend
-                    console.log('Form submitted:', data);
-                    
-                    // Show success message
-                    alert('Thank you! Your message has been sent successfully. I\'ll get back to you soon!');
-                    form.reset();
-                    
-                } catch (error) {
-                    console.error('Form submission error:', error);
-                    alert('Oops! Something went wrong. Please try again.');
-                } finally {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }
-            }
+        if (response.ok) {
+            alert('تم إرسال الرسالة بنجاح! شكراً لك');
+            form.reset();
+        } else {
+            throw new Error('Submission failed');
+        }
+    } catch (error) {
+        alert('وقع خطأ، يرجى المحاولة مرة أخرى');
+    } finally {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }
+}
 
             // Scroll animations
             initScrollAnimations() {
@@ -514,4 +476,5 @@
                 });
             });
         }
+    
     
