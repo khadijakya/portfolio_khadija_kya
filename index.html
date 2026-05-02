@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script src="script.js"></script>
+   
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -170,6 +170,7 @@
             <div class="projects-grid" id="projects-grid">
                 <!-- Projects will be loaded dynamically -->
             </div>
+            <div id="github-container"></div>
         </div>
     </section>
 
@@ -180,23 +181,30 @@
         <div class="container">
             <h2 class="section-title"> Contact</h2>
            
-            <form class="contact-form" id="contact-form">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="form-group full-width">
-                    <textarea id="message" placeholder="Tell me about your project or question!" rows="5" required></textarea>
-                    <i class="fas fa-comment"></i>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">
-                    <i class="fas fa-paper-plane"></i> Envoyer Message
-                </button>
-            </form>
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mvzlgqww"
+  method="POST">
+    <div class="form-group">
+        <!-- Zdna name="name" hna -->
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <i class="fas fa-user"></i>
+    </div>
+    
+    <div class="form-group">
+        <!-- Zdna name="email" hna -->
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <i class="fas fa-envelope"></i>
+    </div>
+
+    <div class="form-group full-width">
+        <!-- Zdna name="message" hna -->
+        <textarea id="message" name="message" placeholder="Tell me about your project or question!" rows="5" required></textarea>
+        <i class="fas fa-comment"></i>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-full">
+        <i class="fas fa-paper-plane"></i> Envoyer Message
+    </button>
+</form>
         </div>
     </section>
     <div >
@@ -237,6 +245,6 @@
         </div>
     </div>
     
-
+ <script src="script.js"></script>
 </body>
 </html>
