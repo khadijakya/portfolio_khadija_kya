@@ -1,4 +1,4 @@
-// Professional Portfolio JavaScript - Sarah Kim
+ // Professional Portfolio JavaScript - Sarah Kim
         // First-Year Information Engineering Student Portfolio
         // All functionalities implemented with modern JavaScript ES6+
 
