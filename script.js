@@ -1,11 +1,13 @@
- // Professional Portfolio JavaScript - Sarah Kim
+
+   
+        // Professional Portfolio JavaScript - Sarah Kim
         // First-Year Information Engineering Student Portfolio
         // All functionalities implemented with modern JavaScript ES6+
 
         class PortfolioApp {
             constructor() {
                 this.projects = [];
-                this.githubUsername = 'facebook'; // Using Facebook for demo (public repos)
+                this.githubUsername = 'kyakhadija'; // Using Facebook for demo (public repos)
                 this.init();
             }
 
@@ -25,13 +27,15 @@
 
             // Navigation functionality
             initNavigation() {
-                const navToggle = document.getElementById('nav-toggle');
-                const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-                navToggle.addEventListener('click', () => {
-                    navMenu.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                });
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    }
 
                 // Close mobile menu when clicking on a link
                 document.querySelectorAll('.nav-link').forEach(link => {
@@ -312,7 +316,7 @@
             async loadGitHubRepos() {
                 try {
                     const container = document.getElementById('github-container');
-                    
+                    if (!container) return;
                     // Show loading state
                     container.innerHTML = `
                         <div class="loading-spinner">
