@@ -438,14 +438,7 @@
             transform: translateY(-2px);
         }
 
-        /* Projects Section */
-        .projects-filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
+       
 
         .filter-btn {
             background: var(--bg-secondary);
@@ -829,4 +822,3 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--primary);
         }
-    
