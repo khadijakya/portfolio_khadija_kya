@@ -7,7 +7,7 @@
         class PortfolioApp {
             constructor() {
                 this.projects = [];
-                this.githubUsername = 'kyakhadija'; // Using Facebook for demo (public repos)
+                this.githubUsername = 'khadijakya'; // Using Facebook for demo (public repos)
                 this.init();
             }
 
@@ -16,11 +16,9 @@
                 this.initNavigation();
                 this.initSmoothScroll();
                 this.initScrollAnimations();
-                this.initProjectFiltering();
                 this.initModal();
                 this.initContactForm();
                 this.initStatsAnimation();
-                this.loadGitHubRepos();
                 this.loadProjects();
                 this.observeElements();
             }
@@ -149,93 +147,59 @@
                 statsObserver.observe(document.querySelector('.about-stats'));
             }
 
-            // Project filtering
-            initProjectFiltering() {
-                const filterBtns = document.querySelectorAll('.filter-btn');
-                
-                filterBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        filterBtns.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                        
-                        const filter = btn.dataset.filter;
-                        this.filterProjects(filter);
-                    });
-                });
-            }
+          
 
-            filterProjects(filter) {
-                const projectCards = document.querySelectorAll('.project-card');
-                projectCards.forEach(card => {
-                    const category = card.dataset.category;
-                    if (filter === 'all' || category === filter) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeInUp 0.6s ease forwards';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
+
+
+
+
+
+            
 
             // Load first-year student projects
-            loadProjects() {
-                const projectsGrid = document.getElementById('projects-grid');
-                const projectsData = [
-                    {
-                        id: 1,
-                        title: 'Personal Portfolio Website',
-                        description: 'My first responsive portfolio built with HTML, CSS, and JavaScript. Features smooth animations, mobile responsiveness, and interactive elements.',
-                        tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
-                        image: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                        category: 'web',
-                        link: '#'
-                    },
-                    {
-                        id: 2,
-                        title: 'Student Database System',
-                        description: 'University database project using SQL. Created tables for student records, courses, and grades with complex JOIN queries and normalization.',
-                        tags: ['SQL', 'MySQL', 'Database Design', 'Queries'],
-                        image: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-                        category: 'database',
-                        link: '#'
-                    },
-                    {
-                        id: 3,
-                        title: 'To-Do List Application',
-                        description: 'Interactive to-do list web app with local storage, drag & drop functionality, and task categorization built during programming fundamentals course.',
-                        tags: ['HTML', 'CSS', 'JavaScript', 'Local Storage'],
-                        image: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-                        category: 'web',
-                        link: '#'
-                    },
-                    {
-                        id: 4,
-                        title: 'Sorting Algorithm Visualizer',
-                        description: 'Web application visualizing Bubble Sort, Selection Sort, and Insertion Sort algorithms with animated step-by-step execution.',
-                        tags: ['JavaScript', 'HTML Canvas', 'Algorithms', 'Visualization'],
-                        image: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-                        category: 'algorithms',
-                        link: '#'
-                    },
-                    {
-                        id: 5,
-                        title: 'Library Management System',
-                        description: 'Database project modeling a library system with books, members, and borrowing records. Implemented stored procedures and triggers.',
-                        tags: ['SQL', 'MySQL', 'Database Design', 'Stored Procedures'],
-                        image: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
-                        category: 'database',
-                        link: '#'
-                    },
-                    {
-                        id: 6,
-                        title: 'Number Guessing Game',
-                        description: 'Algorithm assignment implementing binary search to create an efficient number guessing game with optimal strategy analysis.',
-                        tags: ['JavaScript', 'Algorithms', 'Binary Search', 'Game Logic'],
-                        image: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
-                        category: 'algorithms',
-                        link: '#'
-                    }
-                ];
+          loadProjects() {
+    const projectsGrid = document.getElementById('projects-grid');
+
+    if (!projectsGrid) return;
+
+    const projectsData = [
+        {
+            id: 1,
+            title: "Cronometre",
+            description: "Simple cronometre built with HTML, CSS & JavaScript",
+            tags: ['HTML', 'CSS', 'JavaScript'],
+            image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            category: "web",
+            link: "  https://khadijakya.github.io/cronometre_kya_khadija/",
+            githubLink: "https://github.com/khadijakya/cronometre_kya_khadija"
+        },
+
+
+        {
+            id: 2,
+            title: "Calculatrice",
+            description: "Simple calculator built with HTML, CSS & JavaScript",
+            tags: ['HTML', 'CSS', 'JavaScript'],
+            image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            category: "web",
+            link: " https://khadijakya.github.io/calculatrice-kya_khadija/",
+            githubLink: "https://github.com/khadijakya/calculatrice-kya_khadija"
+        },
+
+         {
+            id: 3,
+            title: "To do list",
+            description: "Simple To do list built with HTML, CSS & JavaScript",
+            tags: ['HTML', 'CSS', 'JavaScript'],
+            image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            category: "web",
+            link: "  https://khadijakya.github.io/todoliste_kya_khadija/",
+            githubLink: "https://github.com/khadijakya/todoliste_kya_khadija"
+        }, 
+
+      
+    ];
+
 
                 projectsData.forEach(project => {
                     const projectCard = this.createProjectCard(project);
@@ -285,72 +249,37 @@
                 });
             }
 
-            openProjectModal(project) {
-                const modal = document.getElementById('project-modal');
-                const modalBody = document.getElementById('modal-body');
-                
-                modalBody.innerHTML = `
-                    <div style="background: linear-gradient(135deg, ${project.image}); padding: 3rem; border-radius: 20px 20px 0 0; text-align: center;">
-                        <h2 style="color: white; margin-bottom: 0.5rem;">${project.title}</h2>
-                        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem;">${project.tags.join(' • ')}</p>
-                    </div>
-                    <div style="padding: 2.5rem;">
-                        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 1.1rem;">
-                            ${project.description}
-                        </p>
-                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="${project.link}" class="btn btn-primary" style="flex: 1;" target="_blank">
-                                <i class="fas fa-eye"></i> View Project
-                            </a>
-                            <a href="#" class="btn btn-secondary" style="flex: 1;">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                `;
-                
-                modal.classList.add('active');
-            }
+         openProjectModal(project) {
+    const modal = document.getElementById('project-modal');
+    const modalBody = document.getElementById('modal-body');
+    
+    modalBody.innerHTML = `
+        <div style="background: ${project.image}; padding: 3rem; border-radius: 20px 20px 0 0; text-align: center;">
+            <h2 style="color: white; margin-bottom: 0.5rem;">${project.title}</h2>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem;">${project.tags.join(' • ')}</p>
+        </div>
+        <div style="padding: 2.5rem;">
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 1.1rem;">
+                ${project.description}
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="${project.link}" class="btn btn-primary" style="flex: 1; text-align: center;" target="_blank">
+                    <i class="fas fa-eye"></i> View Project
+                </a>
+                <!-- هنا عدلنا الرابط باش يخدم بـ githubLink اللي زدنا -->
+                <a href="${project.githubLink}" class="btn btn-secondary" style="flex: 1; text-align: center;" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </div>
+    `;
+    
+    modal.classList.add('active');
+}
 
-            // GitHub API Integration with async/await and error handling
-            async loadGitHubRepos() {
-                try {
-                    const container = document.getElementById('github-container');
-                    if (!container) return;
-                    // Show loading state
-                    container.innerHTML = `
-                        <div class="loading-spinner">
-                            <i class="fas fa-spinner fa-spin"></i>
-                            <p>Fetching GitHub repositories...</p>
-                        </div>
-                    `;
 
-                    const response = await fetch(
-                        `https://api.github.com/users/${this.githubUsername}/repos?sort=updated&per_page=6`,
-                        {
-                            headers: {
-                                'Accept': 'application/vnd.github.v3+json'
-                            }
-                        }
-                    );
 
-                    if (!response.ok) {
-                        throw new Error(`GitHub API error: ${response.status}`);
-                    }
-
-                    const repos = await response.json();
-                    
-                    // Update container with repos or fallback
-                    container.innerHTML = repos.length > 0 
-                        ? repos.map(repo => this.createGitHubCard(repo)).join('')
-                        : this.createNoReposMessage();
-
-                } catch (error) {
-                    console.error('Error loading GitHub repos:', error);
-                    this.showErrorMessage('github-container', 'Failed to load GitHub repositories. Please check your connection.');
-                }
-            }
-
+          
             createGitHubCard(repo) {
                 return `
                     <div class="github-card">
