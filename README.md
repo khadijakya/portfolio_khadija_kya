@@ -37,20 +37,6 @@ portfolio_khadija_kya/
 └── README.md
 ```
 
----
-
-## 🚀 Lancer le projet
-1. Cloner le dépôt :
-```bash
-git clone https://github.com/khadijakya/portfolio_khadija_kya.git
-```
-
-2. Ouvrir le dossier du projet.
-
-3. Exécuter le fichier `index.html` dans le navigateur.
-
----
-
 ## 🌍 Site Web
 🔗 https://khadijakya.github.io/portfolio_khadija_kya/#
 
