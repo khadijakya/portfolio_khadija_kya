@@ -27,7 +27,7 @@ Le site permet également de faciliter la communication grâce à une section de
 ---
 
 ## 📸 Capture d’écran du site
-![Capture du site](capture.png)
+(Capture d’écran.png)
 
 ---
 
