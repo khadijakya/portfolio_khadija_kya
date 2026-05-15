@@ -1,21 +1,21 @@
 # 🌐 Portfolio Personnel – Khadija Kya
 
-## 📖 Description
-Bienvenue dans mon portfolio personnel développé avec **HTML5, CSS3 et JavaScript**.  
-Ce projet a été réalisé afin de présenter mon profil, mes compétences techniques ainsi que les différents projets que j’ai réalisés dans le domaine du développement web.
+## 📖 Description du projet
+Ce projet est un portfolio personnel développé avec HTML, CSS et JavaScript.  
+L’objectif principal est de présenter mon profil, mes compétences et mes projets dans une interface moderne, responsive et interactive.
 
-Le site possède une interface moderne, responsive et interactive adaptée aux ordinateurs et aux appareils mobiles.
+Le site permet également de faciliter la communication grâce à une section de contact.
 
 ---
 
-## ✨ Fonctionnalités
-- 🎨 Interface moderne et élégante
-- 📱 Design responsive
-- 👩‍💻 Présentation personnelle
-- 🚀 Affichage des projets réalisés
-- 🛠️ Mise en valeur des compétences
-- 📬 Section de contact
-- ⚡ Navigation fluide et animations interactives
+## ✨ Fonctionnalités principales
+- Interface moderne et élégante
+- Design responsive (mobile et ordinateur)
+- Présentation personnelle
+- Affichage des projets réalisés
+- Navigation fluide entre les sections
+- Section compétences
+- Section contact
 
 ---
 
@@ -26,26 +26,20 @@ Le site possède une interface moderne, responsive et interactive adaptée aux o
 
 ---
 
-## 📁 Structure du projet
-```bash
-portfolio_khadija_kya/
-│
-├── index.html
-├── style.css
-├── script.js
-├── images/
-└── README.md
-```
+## 📸 Capture d’écran du site
+![Capture du site](capture.png)
 
-## 🌍 Site Web
+---
+
+## 🎨 Maquette Figma
+🔗 Ajouter ici le lien Figma
+
+---
+
+## 🌍 Version en ligne
 🔗 https://khadijakya.github.io/portfolio_khadija_kya/#
 
 ---
 
 ## 👩‍💻 Auteur
 **Khadija Kya**
-
----
-
-## 📌 GitHub
-🔗 https://github.com/khadijakya/portfolio_khadija_kya
