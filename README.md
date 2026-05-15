@@ -27,7 +27,8 @@ Le site permet également de faciliter la communication grâce à une section de
 ---
 
 ## 📸 Capture d’écran du site
-![Capture du site(Capture d’écran.png)
+https://github.com/user-attachments/assets/bdde9736-a87b-49ab-943d-0f528b0cfd3d
+
 
 ---
 
