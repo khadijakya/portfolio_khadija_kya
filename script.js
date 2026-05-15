@@ -1,17 +1,11 @@
-
-   
-        // Professional Portfolio JavaScript - Sarah Kim
-        // First-Year Information Engineering Student Portfolio
-        // All functionalities implemented with modern JavaScript ES6+
-
-        class PortfolioApp {
+class PortfolioApp {
             constructor() {
                 this.projects = [];
-                this.githubUsername = 'khadijakya'; // Using Facebook for demo (public repos)
+                this.githubUsername = 'khadijakya'; 
                 this.init();
             }
 
-            // Initialize all event listeners and functionalities
+           
             init() {
                 this.initNavigation();
                 this.initSmoothScroll();
@@ -23,7 +17,7 @@
                 this.observeElements();
             }
 
-            // Navigation functionality
+           
             initNavigation() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -35,7 +29,7 @@
         });
     }
 
-                // Close mobile menu when clicking on a link
+               
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.addEventListener('click', () => {
                         navMenu.classList.remove('active');
@@ -44,7 +38,7 @@
                 });
             }
 
-            // Smooth scrolling and active nav highlighting
+            
             initSmoothScroll() {
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
@@ -111,7 +105,6 @@
                 });
             }
 
-            // Stats counter animation
             initStatsAnimation() {
                 const stats = document.querySelectorAll('.stat-number');
                 
@@ -149,14 +142,6 @@
 
           
 
-
-
-
-
-
-            
-
-            // Load first-year student projects
           loadProjects() {
     const projectsGrid = document.getElementById('projects-grid');
 
@@ -171,7 +156,8 @@
             image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
             category: "web",
             link: "  https://khadijakya.github.io/cronometre_kya_khadija/",
-            githubLink: "https://github.com/khadijakya/cronometre_kya_khadija"
+            githubLink: "https://github.com/khadijakya/cronometre_kya_khadija",
+            image: "ui.png"
         },
 
 
@@ -183,7 +169,8 @@
             image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
             category: "web",
             link: " https://khadijakya.github.io/calculatrice-kya_khadija/",
-            githubLink: "https://github.com/khadijakya/calculatrice-kya_khadija"
+            githubLink: "https://github.com/khadijakya/calculatrice-kya_khadija",
+             image: "call.png"
         },
 
          {
@@ -194,7 +181,8 @@
             image: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
             category: "web",
             link: "  https://khadijakya.github.io/todoliste_kya_khadija/",
-            githubLink: "https://github.com/khadijakya/todoliste_kya_khadija"
+            githubLink: "https://github.com/khadijakya/todoliste_kya_khadija",
+             image: "in.png"
         }, 
 
       
@@ -207,26 +195,30 @@
                 });
             }
 
-            createProjectCard(project) {
-                const card = document.createElement('div');
-                card.className = 'project-card';
-                card.dataset.category = project.category;
-                card.innerHTML = `
-                    <div class="project-image" style="background: ${project.image}"></div>
-                    <div class="project-content">
-                        <h3 class="project-title">${project.title}</h3>
-                        <p class="project-description">${project.description}</p>
-                        <div class="project-tags">
-                            ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                        </div>
-                    </div>
-                `;
-                
-                card.addEventListener('click', () => this.openProjectModal(project));
-                return card;
-            }
+         createProjectCard(project) {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.dataset.category = project.category;
+    
+    card.innerHTML = `
+        <!-- هاد الديف غتجمع التصويرة وتكون هي الفوقانية -->
+        <div class="project-image-container">
+            <img src="${project.image}" alt="${project.title}" class="card-img">
+        </div>
 
-            // Modal functionality
+        <div class="project-content">
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-description">${project.description}</p>
+            <div class="project-tags">
+                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+            </div>
+        </div>
+    `;
+    
+    card.addEventListener('click', () => this.openProjectModal(project));
+    return card;
+}
+
             initModal() {
                 const modal = document.getElementById('project-modal');
                 const closeBtn = document.getElementById('modal-close');
@@ -266,7 +258,6 @@
                 <a href="${project.link}" class="btn btn-primary" style="flex: 1; text-align: center;" target="_blank">
                     <i class="fas fa-eye"></i> View Project
                 </a>
-                <!-- هنا عدلنا الرابط باش يخدم بـ githubLink اللي زدنا -->
                 <a href="${project.githubLink}" class="btn btn-secondary" style="flex: 1; text-align: center;" target="_blank">
                     <i class="fab fa-github"></i> View Code
                 </a>
@@ -325,7 +316,7 @@ initContactForm() {
         const data = Object.fromEntries(formData);
         await this.handleFormSubmit(data);
     });
-} // هاد القوس كان ناقص عندك وهو اللي داير مشكل لتحت
+} 
 
 async handleFormSubmit(data) {
     const form = document.getElementById('contact-form');
@@ -359,9 +350,9 @@ async handleFormSubmit(data) {
     }
 }
 
-            // Scroll animations
+           
             initScrollAnimations() {
-                // Parallax effect for hero floating cards
+              
                 window.addEventListener('scroll', () => {
                     const scrolled = window.pageYOffset;
                     const floatingCards = document.querySelectorAll('.floating-card');
@@ -374,11 +365,10 @@ async handleFormSubmit(data) {
             }
         }
 
-        // Initialize the portfolio app when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             new PortfolioApp();
             
-            // Add fade-in animation to sections
+           
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -10% 0px'
@@ -401,7 +391,7 @@ async handleFormSubmit(data) {
             });
         });
 
-        // PWA-like functionality for better UX
+       
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js').catch(() => {
