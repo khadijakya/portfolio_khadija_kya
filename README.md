@@ -33,7 +33,7 @@ https://github.com/user-attachments/assets/bdde9736-a87b-49ab-943d-0f528b0cfd3d
 ---
 
 ## 🎨 Maquette Figma
-🔗 Ajouter ici le lien Figma
+🔗 [Ajouter ici le lien Figma](https://www.figma.com/design/M27yariQhtU1PUq8fGUd7O/projet?node-id=0-1&t=9bp4zTDhI0TbtsVb-1)
 
 ---
 
